@@ -1,7 +1,7 @@
 # Udacity  Deep Reinforcement Learning
 
 ## Project 2 - Continuous Control
-### Reacher
+### Reacher Enivronment
 
 [![Alt text](https://img.youtube.com/vi/34Gu98Q33G4/0.jpg)](https://www.youtube.com/watch?v=34Gu98Q33G4&loop=1)
 
@@ -11,9 +11,9 @@ For this project, we have been given the task of training an agent to conrol twe
 
 The world is  provided as a virtual environment using Unity Machine Learning Agents ( https://github.com/Unity-Technologies/ml-agents).
 
-For each robot arm , the environment provides an observation space , andexpects an action vector.
+For each arm, the environment provides an observation of the current state  , and returns  an action vector., and reward. The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between  -1 and 1.  This is repeated for evey arm so there are 20x33 states , 20x4 actions and 20x1 rewards, and 20x1 done flags ( we assume for this project if one agent is done , they will all done ).
 
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between  -1 and 1.
+The environment is considered solved , when the average episode score over the last 100 episodes is at least 30. For each episode , the sum of rewards ( observed without discounting ) for each arm is accumulated , the episode score is the mean over all these.
 
 The agent code is required to be written in  Python 3 and use the Pytorch framework.. It interacts with a custom provided unity app, that has an interface using the open-source Unity plugin (ML-Agents). For this project it is using ML-Agents version 0.4.0.
 
@@ -53,9 +53,9 @@ The agent code is required to be written in  Python 3 and use the Pytorch framew
 
 The training code is found in the *agent.py* file , along with helper functions envhelper.py and models.py. 
 
-For convenince the interface to these is contained in the *Trainer.ipynb* jupyter/ipython notebook, where one can experemint with the Hyperparameters and visualize the results.
+For convenince the interface to these is contained in the *Trainer.ipynb* jupyter/ipython notebook, where one can experemint with the Hyperparameters and record and visualize the results.
 
-You need to run code in  ***section 0*** first! ,  but can then run any of sections 1,2 and 3.
+You need to run code in  ***section 0*** first! ,  but can then run any of sections 1,2 and 3. The unity agents are a bit buggy inside anotebook, so you may have to restart the kernel after each section.
 
 **0 . Setup **
 
@@ -67,9 +67,9 @@ And run the cells in this section.
 
 **1. Training** 
 
-Training can be done , by simply executing the code in this section. The following parameters can be adjusted.
+Training can be done  by simply executing the code in this section. The following parameters can be adjusted.
 
-A plot of scores obtained during training is produced.
+A plot of scores obtained during training is produced. And if a successful solution is found the model weights are save id the model.pth file.
 
 **2. Validation** 
 
