@@ -57,7 +57,7 @@ For convenince the interface to these is contained in the *Trainer.ipynb* jupyte
 
 You need to run code in  ***section 0*** first! ,  but can then run any of sections 1,2 and 3. The unity agents are a bit buggy inside anotebook, so you may have to restart the kernel after each section.
 
-**0 . Setup **
+**0. Setup**
 
 Firstly, update the variable AGENT_FILE to match the path where you have downloaded the the binary unity agent code, for your OS.
 
